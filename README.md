@@ -22,9 +22,30 @@ Once we have an idea of the number of rows and columns we have we can determine 
 
 <img width="298" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/3fab6515-b7ca-481d-b1dd-2b4818800c30">
 
+## Data Management
+### Data cleaning
+**Feature Selection**
 
+Based on examining the features, some of them require considerable thought concerning being included in the final model, as their relevance, correlation, or impact on the model's performance needs to be assessed.
 
+**Index:** This feature has 1994 unique values having an identifiable attribute associated with every track, doesn't offer any relevant data for the model and therefore will be removed from the analysis.
 
+**Title:** This feature, consisting of 1958 category data that is unnecessary in our view, would cause difficulties with the model, so we are removing it to simplify things.
 
+**Artist:** This feature consists of 731 categorical features which will help to identify patterns related to specific artists.
+
+**Year:** This feature has 63 unique values so we would select it as a feature for the model.
+
+<img width="418" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/593e24ce-60f3-456c-9d11-38267ac85851">
+
+**Feature Dropping**
+
+It is done to:
+- **Improve Model Performance:** Reduce overfitting and enhance generalization.
+- **Reduce Complexity:** Simplifies the model for better interpretability.
+- **Increase Efficiency:** Speeds up training and prediction times.
+- **Enhance Data Quality:** Mitigates the impact of noisy or irrelevant data.
+- **Address Multicollinearity:** Eliminates highly correlated features to improve model
+accuracy.
 
 ### Exploratory Data Analysis (EDA)
