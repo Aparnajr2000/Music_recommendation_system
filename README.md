@@ -48,6 +48,13 @@ It is done to:
 - **Address Multicollinearity:** Eliminates highly correlated features to improve model
 accuracy.
 
+![image](https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/8431813d-bdad-4f80-9195-0aabd7aa9353)
+
+Duplicate And Null Value
+When sampling is done, certain data points are left blank, and this leads to null values in our
+dataset. We can't just skip those null value entries, they must be encoded in some wa
+Duplicate
+Our dataset has a 0 null value.
 
 
 
