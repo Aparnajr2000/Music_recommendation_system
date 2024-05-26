@@ -213,13 +213,45 @@ We chose not to use Regression or Classification models because they weren't the
 
 <img width="250" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/61a9549c-51fc-4448-88e6-3eefcc22cd85">
 
+**How does KNN help in clustering?**
 
+Unlabelled data: KNN is great for working with unlabeled data. It clusters data points based on their distances from each other and groups the data points nearer to each other in the same.
 
+**Why are we using KNN?**
 
+To recommend songs to a user, we use the K-Nearest Neighbors (KNN) algorithm, which finds similar songs based on Euclidean distance.
 
+This approach:
 
+- Recommends songs similar to the user's preferred choice, allows easy integration of new songs, and provides personalized recommendations.
+KNN is a suitable solution for our use case, enabling us to find the closest matches and expand the user's musical horizons.
+- **Non-linear relationships**: KNN can handle non-linear relationships between features and targets, making it a good choice for our datasets with complex interactions.
+Our dataset has no linear relationship, a change in one variable doesn't result in a consistent straight-line change in the other variable.
+- **Robust to noise**: KNN is robust to noisy data and outliers, as it focuses on the nearest neighbors rather than the entire dataset.
+KNN is a model that can filter out the noise and focus on the main dataset (the nearest neighbors). It doesn't get distracted by the weird, one-off sounds (outliers) or the background noise (noisy data)
+- **High-dimensional data**: KNN can handle high-dimensional data with a large number of features, this means if your dataset has a LOT of columns (features) - maybe 10, 20, 50 variables describing each data point.
+Your dataset has high dimensions, making KNN suitable for datasets with many variables. This can make it hard for some algorithms to work with the data. Our dataset has 9 features making it a dataset with high dimensionality.
+Store All Features: KNN stores all the features for each data point in the dataset.
 
+**KNN steps**
+1. First, we select k random centroids
+2. Then we start assigning points to different centroid groups based on its distance from the centroids
+3. Once all the points are exhausted, Then we calculate the variance of each cluster to calculate the total variance of the data set
+4. Then we move the centroids to the center of their cluster by taking averages.
+5. Then we reassign groups to these updated centroids and the cluster changes a little.
+6. Then we jump back to step 3
+7. We iterate steps 3-6 to reduce the variance calculated in step 3.
+8. Once we see the variance is no longer reducing significantly, we have reached an elbow point and we can stop our iterations.
 
+In Summary, KNN's ability to handle high-dimensional data means it can look at many characteristics at once, making it suitable for complex datasets with many variables
+
+**Why We Didn't Choose Regression or Classification**
+
+When building our recommendation system, we deliberately decided against using Regression or Classification models like Linear Regression or Decision Trees. 
+Here's why:
+- Labeling limitations: We didn't have labeled data to work with, and even if we did, genres are so diverse that it would be tough to categorize them effectively.
+- The external song problem: These models need an external song to classify or predict a value, but we wanted to suggest songs from our own dataset.
+It's like trying to find a matching puzzle piece from a different puzzle altogether!
 
 
 
