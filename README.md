@@ -205,79 +205,13 @@ Provides a more accurate measure of goodness-of-fit when comparing models with d
 Determines whether at least one of the predictor variables has a non-zero coefficient.
 
 ## Model We are adopting
-K Nearest Neighbours or KNN is an unsupervised learning algorithm used for regression,
-classification, and clustering of the data based on Euclidean distance. Our goal was to
-recommend songs that are similar to what the user already likes, and that meant finding a
-different approach. That's where K-Nearest Neighbors (KNN) comes in - it's perfect for finding
-close matches within our dataset. We chose not to use Regression or Classification models
-because they weren't the right fit for our recommendation system.
-How does KNN help in clustering?
-Unlabelled data: KNN is great for working with unlabeled data. Its clusters data points based on
-their distances from each other and groups the data points nearer to each other in the same
-Why are we using KNN?
-To recommend songs to a user, we use the K-Nearest Neighbors (KNN) algorithm, which finds
-similar songs based on Euclidean distance.
-This approach:
-● Recommends songs similar to the user's preferred choice, Allows easy integration of
-new songs, and Provides personalized recommendations. KNN is a suitable solution for
-our use case, enabling us to find the closest matches and expand the user's musical
-horizons.
-● Non-linear relationships: KNN can handle non-linear relationships between features
-and targets, making it a good choice for our datasets with complex interactions. Our
-dataset has no linear relationship, a change in one variable doesn't result in a consistent
-straight-line change in the other variable.
-● Robust to noise: KNN is robust to noisy data and outliers, as it focuses on the nearest
-neighbors rather than the entire dataset. KNN is a model that can filter out the noise and
-focus on the main dataset (the nearest neighbors). It doesn't get distracted by the weird,
-one-off sounds (outliers) or the background noise (noisy data)
-● High-dimensional data: KNN can handle high-dimensional data with a large number of
-features, This means if your dataset has a LOT of columns (features) - maybe 10, 20, 50
-variables describing each data point. Your dataset has high dimensions, making KNN
-suitable for datasets with many variables. This can make it hard for some algorithms to
-work with the data. Our dataset has 9 features making it a dataset with high
-dimensionality. Store All Features: KNN stores all the features for each data point in the
-dataset.
-KNN steps
-I. First, we select k random centroids
-II. Then we start assigning points to different centroid groups based on its distance from the
-centroids
-III. Once all the points are exhausted, Then we calculate the variance of each cluster to
-calculate the total variance of the data set
-IV. Then we move the centroids to the center of their cluster by taking averages.
-V. Then we reassign groups to these updated centroids and the cluster changes a little.
-VI. Then we jump back to step 3
-VII. We iterate steps 3-6 to reduce the variance calculated in step 3.
-VIII. Once we see the variance is no longer reducing significantly, we have reached an elbow
-point and we can stop our iterations.
-In Summary, KNN's ability to handle high-dimensional data means it can look at many
-characteristics at once, making it suitable for complex datasets with many variables
-Why We Didn't Choose Regression or Classification
-When building our recommendation system, we deliberately decided against using Regression
-or Classification models like Linear Regression or Decision Trees. Here's why:
-● Labeling limitations: We didn't have labeled data to work with, and even if we did,
-genres are so diverse that it would be tough to categorize them effectively.
-● The external song problem: These models need an external song to classify or predict
-a value, but we wanted to suggest songs from our own dataset. It's like trying to find a
-matching puzzle piece from a different puzzle altogether!
-Challenges Faced
-We have faced multiple challenges as most of us had no prior coding background.
-● We had to learn how to use google collab and one of us had to arrange a brief tutoring
-session.
-● We faced issues with code and syntax as many are still learning python
-● We has to constantly google various resources to write code for various plots and
-techniques
-● He got stuck at many points due to code not being able to find some parameter, later we
-had to rename our parameters to Camel Case to keep consistency
-● While we were learning how to plot the data, we realized not every data type is
-compatible with different visualization and we had to drop those columns
-● We were facing alignment issues with the text in our subplots, and had to study its
-documentation to correct alignment
-● Google collab refreshes regularly so we had to import data multiple time during work
-● Some processing techniques take longer than others, and we realized the importance of
-splitting work in different Code blocks to prevent unnecessary delay
 
+K Nearest Neighbours or KNN is an unsupervised learning algorithm used for regression, classification, and clustering of the data based on Euclidean distance. 
+Our goal was to recommend songs that are similar to what the user already likes, and that meant finding a different approach. 
+That's where K-Nearest Neighbors (KNN) comes in - it's perfect for finding close matches within our dataset. 
+We chose not to use Regression or Classification models because they weren't the right fit for our recommendation system.
 
-
+![image](https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/61a9549c-51fc-4448-88e6-3eefcc22cd85)
 
 
 
