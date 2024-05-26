@@ -36,7 +36,7 @@ Based on examining the features, some of them require considerable thought conce
 
 **Year:** This feature has 63 unique values so we would select it as a feature for the model.
 
-<img width="418" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/593e24ce-60f3-456c-9d11-38267ac85851">
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/593e24ce-60f3-456c-9d11-38267ac85851">
 
 **Feature Dropping**
 
@@ -48,7 +48,7 @@ It is done to:
 - **Address Multicollinearity:** Eliminates highly correlated features to improve model
 accuracy.
 
-<img width="418" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/3e61fdac-b3dd-4f03-8a5c-46d1449213ef">
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/3e61fdac-b3dd-4f03-8a5c-46d1449213ef">
 
 **Duplicate And Null Value**
 
@@ -58,19 +58,19 @@ When sampling is done, certain data points are left blank, and this leads to nul
 
 Our dataset has a 0 null value.
 
-<img width="418" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/523ffc37-0ba4-4bec-af50-80d28ae84e8d">
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/523ffc37-0ba4-4bec-af50-80d28ae84e8d">
 
 **Null value**
 We use isnull() to check the null values in a dataset. 
 This returns a Boolean value true if there are null values in the dataset and returns False if there are no null values in the dataset.
 
-<img width="418" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/f4a19113-e25d-4b6e-8d89-7c071e112c98">
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/f4a19113-e25d-4b6e-8d89-7c071e112c98">
 
 ## Exploratory Data Analysis (EDA)
 
 Exploratory Data Analysis (EDA) is the process of examining and visualizing data to uncover patterns, trends, anomalies, and relationships, helping to understand the dataset before applying any modeling techniques
 
-<img width="418" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/f2b273f2-2b4e-4606-97f0-19c600e26818">
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/f2b273f2-2b4e-4606-97f0-19c600e26818">
 
 There are 10 numeric columns and 3 string columns
 
