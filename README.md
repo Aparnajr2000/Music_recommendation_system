@@ -10,3 +10,9 @@ This way, we can recommend music that users are likely to like!"
 **Data Source:**
 
 https://www.kaggle.com/datasets/iamsumat/spotify-top-2000s-mega-dataset/data 
+
+
+
+###Exploratory Data Analysis (EDA)
+![Uploading image.png…]()
+
