@@ -16,11 +16,15 @@ https://www.kaggle.com/datasets/iamsumat/spotify-top-2000s-mega-dataset/data
 
 <img width="962" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/aec25237-89b0-48db-b987-0000c8b16dea">
 
+
+
 First thing after importing the data is to check how many rows and columns exist. The info command gives us an overview of the columns, their data types as well as if they have any null values.
 
 Once we have an idea of the number of rows and columns we have we can determine if we can drop any rows, or we might need to repopulate them in case of null or extreme values.
 
 <img width="298" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/3fab6515-b7ca-481d-b1dd-2b4818800c30">
+
+
 
 ## Data Management
 ### Data cleaning
@@ -38,6 +42,8 @@ Based on examining the features, some of them require considerable thought conce
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/593e24ce-60f3-456c-9d11-38267ac85851">
 
+
+
 **Feature Dropping**
 
 It is done to:
@@ -50,6 +56,8 @@ accuracy.
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/3e61fdac-b3dd-4f03-8a5c-46d1449213ef">
 
+
+
 **Duplicate And Null Value**
 
 When sampling is done, certain data points are left blank, and this leads to null values in our dataset. We can't just skip those null value entries, they must be encoded in some way
@@ -60,11 +68,15 @@ Our dataset has a 0 null value.
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/523ffc37-0ba4-4bec-af50-80d28ae84e8d">
 
+
+
 **Null value**
 We use isnull() to check the null values in a dataset. 
 This returns a Boolean value true if there are null values in the dataset and returns False if there are no null values in the dataset.
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/f4a19113-e25d-4b6e-8d89-7c071e112c98">
+
+
 
 ## Exploratory Data Analysis (EDA)
 
@@ -80,6 +92,8 @@ A heatmap is a visual representation of data where colors represent values in a 
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/17dd4a7e-5675-4cc9-b8ef-1f3a95d92057">
 
+
+
 **Scatter plot**
 
 Scatter plots' primary uses are to observe and show relationships between two numeric variables. 
@@ -87,6 +101,8 @@ The dots in a scatter plot not only report the values of individual data points,
 Identification of correlational relationships are common with scatter plots.
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/72e27552-3691-4d62-baa4-13d0f41edc2f">
+
+
 
 **Categorical Features**
 
@@ -96,19 +112,50 @@ We have 731 artists present in the dataset
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/ed97ed94-d467-42bc-8354-7854a0359adb">
 
+
+
 **Measure of central Tendency**
 
 Provides a summary statistic that represents the center point or typical value of a dataset. 
 Here, we will explain the measures of central tendency—mean, median, and mode—using our dataset.
 
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/12662a04-7785-424c-b81d-60e40612c9ec">
 
 
 
+**Relative Frequency**
 
+This involves grouping the variable into categories and counting the number of observations in each category. 
+They are commonly represented with the help of histograms and help in determining the most common values and the range of values in the dataset. 
+This gives us an overview of the spread and shape of the distribution, any extreme values can be spotted as well necessary preprocessing can be applied based on the model selected.
 
+**Box plot**
 
+We have used box plots to get a summary of the distribution, central tendency, and variability of our numerical parameters. 
+It allowed us to gauge the comparative range of each parameter, and their outliers, and detect skewness. 
+Here we can see speechiness and liveness have long whiskers due to their skewed nature.
 
+**Normalization**
 
+From the above Box plots we can understand that our parameters have diverse ranges, this works for regression but will not help during KNN and other models. 
+To ensure that we have a standard range for all our parameters we have to normalize them.
+
+We have chosen Standard Scaler to normalize our data set.
+
+It has a function where u is mean and s is standard deviation.
+
+z = (x - u) / s
+
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/80728279-89e5-455a-afb9-93b45f258e90">
+
+**Transformation**
+
+We have used One-Hot encoding to handle categorical variables such as Gener, Artist and Year.
+One-hot encoding transforms categorical variables into a binary format, where each category becomes a separate binary column. 
+For each observation, only one column has a value of True, indicating the presence of that category, while all other columns are set to False.
+True and False can also be represented in 0 and 1 and can thus be used in euclidean distance function for different models.
+
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/aaaf4ef9-8246-4954-881b-c2225b7fff99">
 
 
 
