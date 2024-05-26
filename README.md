@@ -74,12 +74,27 @@ Exploratory Data Analysis (EDA) is the process of examining and visualizing data
 
 There are 10 numeric columns and 3 string columns
 
+**Heat Map**
 
+A heatmap is a visual representation of data where colors represent values in a matrix. It's useful for quickly identifying patterns, correlations, and variations in large datasets.
 
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/17dd4a7e-5675-4cc9-b8ef-1f3a95d92057">
 
+**Scatter plot**
 
+Scatter plots' primary uses are to observe and show relationships between two numeric variables. 
+The dots in a scatter plot not only report the values of individual data points, but also patterns when the data are taken as a whole. 
+Identification of correlational relationships are common with scatter plots.
 
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/72e27552-3691-4d62-baa4-13d0f41edc2f">
 
+**Categorical Features**
+
+1. Artist
+
+We have 731 artists present in the dataset
+
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/ed97ed94-d467-42bc-8354-7854a0359adb">
 
 
 
