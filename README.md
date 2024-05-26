@@ -253,6 +253,12 @@ Here's why:
 - The external song problem: These models need an external song to classify or predict a value, but we wanted to suggest songs from our own dataset.
 It's like trying to find a matching puzzle piece from a different puzzle altogether!
 
+## TO-DO
+
+- Model Building
+- Model Evaluation
+- Result
+
 ## References
 
 Resources here helped us understand basic syntax for some code and also how these techniques worked, we used the titanic project as a reference to know about various steps in EDA and about various libraries out there.
