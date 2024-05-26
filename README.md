@@ -211,7 +211,7 @@ Our goal was to recommend songs that are similar to what the user already likes,
 That's where K-Nearest Neighbors (KNN) comes in - it's perfect for finding close matches within our dataset. 
 We chose not to use Regression or Classification models because they weren't the right fit for our recommendation system.
 
-![image](https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/61a9549c-51fc-4448-88e6-3eefcc22cd85)
+<img width="250" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/61a9549c-51fc-4448-88e6-3eefcc22cd85">
 
 
 
