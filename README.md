@@ -96,6 +96,10 @@ We have 731 artists present in the dataset
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/ed97ed94-d467-42bc-8354-7854a0359adb">
 
+**Measure of central Tendency**
+
+Provides a summary statistic that represents the center point or typical value of a dataset. 
+Here, we will explain the measures of central tendency—mean, median, and mode—using our dataset.
 
 
 
