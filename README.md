@@ -143,6 +143,8 @@ This gives us an overview of the spread and shape of the distribution, any extre
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/cfb11bec-d29d-45a2-9793-45629d68e652">
 
+
+
 **Box plot**
 
 We have used box plots to get a summary of the distribution, central tendency, and variability of our numerical parameters. 
