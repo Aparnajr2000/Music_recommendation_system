@@ -287,6 +287,7 @@ There are 2 functions:
 The data is then fit to the KMeans model with n = 10 clusters.
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/933bc02c-8d8d-47c1-b074-749b8bbda887">
+
 The data after clustering
 
 
