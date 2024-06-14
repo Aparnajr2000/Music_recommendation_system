@@ -282,7 +282,12 @@ There are 2 functions:
   It runs KMeans for various k values (1 to `max_clusters`) and returns lists of means (inertia) for each k.
 - generate_elbow_plot(means, inertias): Creates a plot to visualize the elbow method (inertia vs. number of clusters).
 
-The data is then fit to the KMeans model.
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/84b0c173-a960-4f7b-90a5-886f9baa27b5">
+
+The data is then fit to the KMeans model with n = 10 clusters.
+
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/933bc02c-8d8d-47c1-b074-749b8bbda887">
+The data after clustering
 
 
 
