@@ -82,15 +82,15 @@ This returns a Boolean value true if there are null values in the dataset and re
 
 Exploratory Data Analysis (EDA) is the process of examining and visualizing data to uncover patterns, trends, anomalies, and relationships, helping to understand the dataset before applying any modeling techniques
 
-<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/f2b273f2-2b4e-4606-97f0-19c600e26818">
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/ab30fb65-c9dd-4f5e-ae2f-789fc11a52ed">
 
-There are 10 numeric columns and 3 string columns
+There are 11 numeric columns and 2 string columns
 
 **Heat Map**
 
 A heatmap is a visual representation of data where colors represent values in a matrix. It's useful for quickly identifying patterns, correlations, and variations in large datasets.
 
-<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/17dd4a7e-5675-4cc9-b8ef-1f3a95d92057">
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/94b061e5-64cf-4bc2-a88f-bd33e46e626d">
 
 
 
@@ -100,7 +100,19 @@ Scatter plots' primary uses are to observe and show relationships between two nu
 The dots in a scatter plot not only report the values of individual data points, but also patterns when the data are taken as a whole. 
 Identification of correlational relationships are common with scatter plots.
 
-<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/72e27552-3691-4d62-baa4-13d0f41edc2f">
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/28f59002-074d-4aa8-9b55-994a300a05f6">
+
+
+
+**Bivariate Analysis**
+
+The relation of energy and loudness is that the higher energy in music typically results in higher loudness. 
+This is because energetic music often features stronger beats, faster tempos, and more intense dynamics, all contributing to its perceived loudness.
+
+
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/5d0dad00-1b2c-4b98-ab49-f60da64ce959">
+
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/a777323b-3f40-42fe-b068-0bacf6e72722">
 
 
 
@@ -129,11 +141,16 @@ This involves grouping the variable into categories and counting the number of o
 They are commonly represented with the help of histograms and help in determining the most common values and the range of values in the dataset. 
 This gives us an overview of the spread and shape of the distribution, any extreme values can be spotted as well necessary preprocessing can be applied based on the model selected.
 
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/cfb11bec-d29d-45a2-9793-45629d68e652">
+
 **Box plot**
 
 We have used box plots to get a summary of the distribution, central tendency, and variability of our numerical parameters. 
 It allowed us to gauge the comparative range of each parameter, and their outliers, and detect skewness. 
 Here we can see speechiness and liveness have long whiskers due to their skewed nature.
+
+<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/3a1bee35-4ea9-42b1-af8a-9fcbd25183c8">
+
 
 **Normalization**
 
@@ -150,7 +167,7 @@ z = (x - u) / s
 
 **Transformation**
 
-We have used One-Hot encoding to handle categorical variables such as Gener, Artist and Year.
+We have used One-Hot encoding to handle categorical variables such as Genre, Artist and Year.
 One-hot encoding transforms categorical variables into a binary format, where each category becomes a separate binary column. 
 For each observation, only one column has a value of True, indicating the presence of that category, while all other columns are set to False.
 True and False can also be represented in 0 and 1 and can thus be used in euclidean distance function for different models.
@@ -253,11 +270,26 @@ Here's why:
 - The external song problem: These models need an external song to classify or predict a value, but we wanted to suggest songs from our own dataset.
 It's like trying to find a matching puzzle piece from a different puzzle altogether!
 
-## TO-DO
 
-- Model Building
-- Model Evaluation
-- Result
+
+## Model Building
+
+We used the K-Means clustering for clustering the songs with similar features. 
+
+There are 2 functions:
+
+- optimize_k_clusters(data, max_clusters=10): Finds the optimal number of clusters for KMeans using the elbow method.
+  It runs KMeans for various k values (1 to `max_clusters`) and returns lists of means (inertia) for each k.
+- generate_elbow_plot(means, inertias): Creates a plot to visualize the elbow method (inertia vs. number of clusters).
+
+The data is then fit to the KMeans model.
+
+
+
+## To Do
+- Evaluate the performance of the model
+- Validation of the model
+- Prediction
 
 ## References
 
