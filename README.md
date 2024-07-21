@@ -54,6 +54,10 @@ It is done to:
 - **Address Multicollinearity:** Eliminates highly correlated features to improve model
 accuracy.
 
+For our dataset we have decided to drop the features **Index** and **Title** as it did not seem to
+provide relevant input in creating our model and predicting the cluster in which the selected
+song would appear
+
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/3e61fdac-b3dd-4f03-8a5c-46d1449213ef">
 
 
@@ -86,13 +90,43 @@ Exploratory Data Analysis (EDA) is the process of examining and visualizing data
 
 There are 11 numeric columns and 2 string columns
 
+**Calculation of Skew**
+
+Skewness is a statistical measure that tells us the degree of asymmetry of the data points
+around its mean. It tells us if the majority of our data points are concentrated on one end of our
+distribution mean or the other. Calculating the skewness gives us an idea of how the parameter
+is distributed. We have calculated the skewness of each numeric column as shown below,
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/b1edafe0-3ede-44f9-b2cf-7a4c78e968e7">
+
+We were able to come up with a conclusion that the parameters year, energy, loudnessdB,and
+Popularity are negatively skewed. Which means that more data points are concentrated on the
+right side of the mean.
+Whereas liveness and speechiness has a evident positive value which tells us that more data
+points are concentrated on the left side of the mean.
+And for the rest of the parameters which show values close to 0 we can say that the data points
+are somewhat distributed symmetrically around the mean.
+
+## Data Visualization
+
+**Relative Frequency**
+
+This involves grouping the variable into categories and counting the number of observations in each category. 
+They are commonly represented with the help of histograms and help in determining the most common values and the range of values in the dataset. 
+This gives us an overview of the spread and shape of the distribution, any extreme values can be spotted as well necessary preprocessing can be applied based on the model selected.
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/8ce32113-8860-4c31-b136-cc1e40716f25">
+
 **Heat Map**
 
 A heatmap is a visual representation of data where colors represent values in a matrix. It's useful for quickly identifying patterns, correlations, and variations in large datasets.
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/94b061e5-64cf-4bc2-a88f-bd33e46e626d">
 
-
+We have plotted a heatmap for the numeric parameters. And was able to find positive
+correlation of 0.74 between the parameters energy and loudness. And a correlation of 0.51
+between valence and danceability. We have set a threshold of above 0.75 to deal with
+correlation in our model hence we do not remove any correlated parameters.
 
 **Scatter plot**
 
@@ -102,7 +136,10 @@ Identification of correlational relationships are common with scatter plots.
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/28f59002-074d-4aa8-9b55-994a300a05f6">
 
-
+We have created a scatter plot for the numerical parameters using pairplot which gives us the
+pairwise relationship between the parameters of our dataset. From the above we were able to
+observe patterns between loudness and energy, and valence and danceability as they are
+positively correlated. We have plotted them separately for further clarity
 
 **Bivariate Analysis**
 
@@ -114,7 +151,9 @@ This is because energetic music often features stronger beats, faster tempos, an
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/a777323b-3f40-42fe-b068-0bacf6e72722">
 
-
+There is a positive correlation between danceability and valence. This means that songs with
+higher danceability scores tend to also have higher valence scores. Such songs could be
+uplifting, making them suitable for dancing and conveying positive emotions simultaneously.
 
 **Categorical Features**
 
@@ -124,6 +163,13 @@ We have 731 artists present in the dataset
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/ed97ed94-d467-42bc-8354-7854a0359adb">
 
+We have plotted a bar graph for 20 most popular artists for better understanding of the dataset
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/86284e41-b5c0-480c-a4a0-12e3c2ffc524">
+
+We have also plotted a bar graph for artists with more than 10 tracks for better understanding of the dataset.
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/c7d6aaa2-70c4-443d-a28e-600ba25e43bc">
 
 
 **Measure of central Tendency**
@@ -133,26 +179,14 @@ Here, we will explain the measures of central tendency—mean, median, and mode�
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/12662a04-7785-424c-b81d-60e40612c9ec">
 
+**Box Plot**
 
+We have used box plots to get a summary of the distribution, central tendency, and variability of our
+numerical parameters. It allowed us to gauge the comparative range of each parameter, and their
+outliers, and detect skewness. Here we can see speechiness and liveness have long whiskers due to
+their skewed nature.
 
-**Relative Frequency**
-
-This involves grouping the variable into categories and counting the number of observations in each category. 
-They are commonly represented with the help of histograms and help in determining the most common values and the range of values in the dataset. 
-This gives us an overview of the spread and shape of the distribution, any extreme values can be spotted as well necessary preprocessing can be applied based on the model selected.
-
-<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/cfb11bec-d29d-45a2-9793-45629d68e652">
-
-
-
-**Box plot**
-
-We have used box plots to get a summary of the distribution, central tendency, and variability of our numerical parameters. 
-It allowed us to gauge the comparative range of each parameter, and their outliers, and detect skewness. 
-Here we can see speechiness and liveness have long whiskers due to their skewed nature.
-
-<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/3a1bee35-4ea9-42b1-af8a-9fcbd25183c8">
-
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/37533aee-8bf0-4d59-98cc-21b6aaa9d411">
 
 **Normalization**
 
@@ -176,115 +210,52 @@ True and False can also be represented in 0 and 1 and can thus be used in euclid
 
 <img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/aaaf4ef9-8246-4954-881b-c2225b7fff99">
 
-**Train Test split**
-
-The train–test split is a fundamental concept in machine learning used to evaluate the performance of a model. 
-The key reasons why we use train-test split are:
-1. Model Evaluation
-2. Prevent Overfitting
-3. Performance metrics
-4. Model Selection
-5. Hyperparameter Tuning
-  - To perform a train – test split, we use ‘train_test_split’ function from the ‘sklearn.model_selection’ module.
-  - After importing the ‘train_test_split’ from the module, we must load the data.
-  - Then after, Define Features(X) and target(Y)
-  - And use the ‘train_test_split’ function to split the data into training and testing sets.
-
-**OLS Regression Results their uses?**
-
-Ordinary Least Squares(OLS) regression is a method for estimating the unknown parameters in a linear regression model. 
-It is a technique in which a straight line is used to estimate the relationship between two interval/ratio variables.
-
-The key parameters and uses of OLS are:
-- Coefficients(coef): Estimates of the regression coefficients for each predictor variable.
-
-It indicates the relationship between each predictor variable and the response variable.
-- Standard error (std err) : It shows the standard error of each coefficient.
-
-Measures the accuracy of the coefficient estimates.
-
-- t-statistics(t) : It is the ratio of the difference in a number’s estimated value from its assumed value to its standard error.
-
-Used to test the null hypothesis that a given coefficient is equal to zero.
-
-- P-value(p): It expresses the results of the hypothesis test as a significance level.
-
-Determines the statistical significance of each coefficient.
-
-- R-squared: It is the coefficient of determination indicating the goodness-of-fit of the regression.
-
-A higher R-square value means a better fit.
-
-- Adjusted R-squared: It is a slightly modified version of 𝑅2R-square, designed to penalize for the excess number of regressors that do not add to the explanatory power of the regression.
-
-Provides a more accurate measure of goodness-of-fit when comparing models with different numbers of predictors.
-
-- F-statistic and Prob(F-statistic): The F-statistic tests the overall significance of the model.
-
-Determines whether at least one of the predictor variables has a non-zero coefficient.
 
 ## Model We are adopting
 
-K Nearest Neighbours or KNN is an unsupervised learning algorithm used for regression, classification, and clustering of the data based on Euclidean distance. 
-Our goal was to recommend songs that are similar to what the user already likes, and that meant finding a different approach. 
-That's where K-Nearest Neighbors (KNN) comes in - it's perfect for finding close matches within our dataset. 
-We chose not to use Regression or Classification models because they weren't the right fit for our recommendation system.
+We chose K-means clustering because it is simple, efficient, and versatile. It is easy to set up and
+computationally efficient, making it ideal for grouping large datasets. The algorithm iteratively
+allocates data points to the closest cluster centroid and updates centroids depending on the mean of
+the given points.
 
-<img width="250" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/61a9549c-51fc-4448-88e6-3eefcc22cd85">
+Our goal was to recommend songs similar to what the user already likes, which meant finding a
+different approach. That's where K Means comes in - it's perfect for finding close matches within our
+dataset. We chose not to use Regression or Classification models because they weren't the right fit
+for our recommendation system.
 
-**How does KNN help in clustering?**
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/922daf9e-1277-4863-89d5-1bdc861fe06e">
 
-Unlabelled data: KNN is great for working with unlabeled data. It clusters data points based on their distances from each other and groups the data points nearer to each other in the same.
 
-**Why are we using KNN?**
+**How does K Means help in clustering?**
 
-To recommend songs to a user, we use the K-Nearest Neighbors (KNN) algorithm, which finds similar songs based on Euclidean distance.
-
-This approach:
-
-- Recommends songs similar to the user's preferred choice, allows easy integration of new songs, and provides personalized recommendations.
-KNN is a suitable solution for our use case, enabling us to find the closest matches and expand the user's musical horizons.
-- **Non-linear relationships**: KNN can handle non-linear relationships between features and targets, making it a good choice for our datasets with complex interactions.
-Our dataset has no linear relationship, a change in one variable doesn't result in a consistent straight-line change in the other variable.
-- **Robust to noise**: KNN is robust to noisy data and outliers, as it focuses on the nearest neighbors rather than the entire dataset.
-KNN is a model that can filter out the noise and focus on the main dataset (the nearest neighbors). It doesn't get distracted by the weird, one-off sounds (outliers) or the background noise (noisy data)
-- **High-dimensional data**: KNN can handle high-dimensional data with a large number of features, this means if your dataset has a LOT of columns (features) - maybe 10, 20, 50 variables describing each data point.
-Your dataset has high dimensions, making KNN suitable for datasets with many variables. This can make it hard for some algorithms to work with the data. Our dataset has 9 features making it a dataset with high dimensionality.
-Store All Features: KNN stores all the features for each data point in the dataset.
-
-**KNN steps**
-1. First, we select k random centroids
-2. Then we start assigning points to different centroid groups based on its distance from the centroids
-3. Once all the points are exhausted, Then we calculate the variance of each cluster to calculate the total variance of the data set
-4. Then we move the centroids to the center of their cluster by taking averages.
-5. Then we reassign groups to these updated centroids and the cluster changes a little.
-6. Then we jump back to step 3
-7. We iterate steps 3-6 to reduce the variance calculated in step 3.
-8. Once we see the variance is no longer reducing significantly, we have reached an elbow point and we can stop our iterations.
-
-In Summary, KNN's ability to handle high-dimensional data means it can look at many characteristics at once, making it suitable for complex datasets with many variables
+K Means is one of the most popular Unsupervised Machine Learning Algorithms used for solving
+classification problems in data science, it segregates unlabeled data into various groups, known as
+clusters, by identifying similar features and common patterns within the dataset.
 
 **Why We Didn't Choose Regression or Classification**
 
-When building our recommendation system, we deliberately decided against using Regression or Classification models like Linear Regression or Decision Trees. 
-Here's why:
-- Labeling limitations: We didn't have labeled data to work with, and even if we did, genres are so diverse that it would be tough to categorize them effectively.
-- The external song problem: These models need an external song to classify or predict a value, but we wanted to suggest songs from our own dataset.
-It's like trying to find a matching puzzle piece from a different puzzle altogether!
+When building our recommendation system, we deliberately decided against using Regression or
+Classification models like Linear Regression or Decision Trees. Here's why:
 
-
+- Labelling limitations: We didn't have labelled data to work with, and even if we did, genres
+are so diverse that it would be tough to categorize them effectively.
+- The external song problem: These models need an external song to classify or predict a
+value, but we wanted to suggest songs from our dataset. It's like trying to find a matching
+puzzle piece from a different puzzle altogether!
 
 ## Model Building
 
-We used the K-Means clustering for clustering the songs with similar features. 
+We used the K-Means clustering for clustering the songs with similar features.
 
 There are 2 functions:
 
-- optimize_k_clusters(data, max_clusters=10): Finds the optimal number of clusters for KMeans using the elbow method.
-  It runs KMeans for various k values (1 to `max_clusters`) and returns lists of means (inertia) for each k.
-- generate_elbow_plot(means, inertias): Creates a plot to visualize the elbow method (inertia vs. number of clusters).
+- optimize_k_clusters(data, max_clusters=10): Finds the optimal number of clusters for
+KMeans using the elbow method. It runs KMeans for various k values (1 to max_clusters)
+and returns lists of means (inertia) for each k.
+- generate_elbow_plot(means, inertias): Creates a plot to visualize the elbow method (inertia
+vs. number of clusters).
 
-<img width="500" alt="image" src="https://github.com/Aparnajr2000/Music_recommendation_system/assets/84074591/84b0c173-a960-4f7b-90a5-886f9baa27b5">
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/2153a30d-52e3-4003-8601-cf1ce6c735f9">
 
 The data is then fit to the KMeans model with n = 10 clusters.
 
@@ -292,40 +263,139 @@ The data is then fit to the KMeans model with n = 10 clusters.
 
 The data after clustering
 
+## Dashboarding
 
+We have used streamlit for creating the application of music recommendation system.
 
-## To Do
-- Evaluate the performance of the model
-- Validation of the model
-- Prediction
+What is streamlit?
+
+Streamlit is a popular framework for building data-centric web applications in Python.
+
+Why streamlit?
+
+1) Simplicity: Streamlit is designed to be intuitive and easy to use.
+2) Fast prototyping: It allows for rapid prototyping of data applications.
+3) Focus on data: Streamlit is optimized for data science and machine learning workflows.
+4) Reactivity: Streamlit apps are reactive, meaning they automatically update when inputs
+are changed.
+5) Documentation and Support: Streamlit offers comprehensive documentation and tutorials,
+making it easy to get started and troubleshoot issues.
+
+Create a new environment in anaconda navigation named ‘streamlitenv’.
+
+Then install streamlit on your device
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/fd5a07c0-32d1-448e-a4c3-15d63bd21347">
+
+.
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/2c0ac4d5-4c76-4846-8e1e-1d52f2c2d84c">
+
+Libraries Imported:
+- streamlit as st: Streamlit for creating the web app.
+- pandas as pd: Pandas for data manipulation and reading CSV files.
+- NearestNeighbors from sklearn.neighbors: For implementing the k-Nearest Neighbors algorithm.
+
+This Python script creates a music recommendation system using Streamlit and the k-Nearest
+Neighbors algorithm. It reads song data from a CSV file, and based on user-selected song features,
+recommends similar songs. The script includes:
+
+Loading Data: The load_data function reads the CSV file containing song data and caches it for
+efficiency.
+
+Recommendation Model: The recommend_songs function takes a song name and the number of
+recommendations as inputs. It finds the nearest neighbors based on the features provided (assumed
+to be 'Feature1' and 'Feature2') and returns a list of recommended songs.
+
+Streamlit Interface: The Streamlit app interface includes a title and a select box for users to choose
+a song. Upon clicking the 'Recommend' button, it displays the recommended songs based on the
+user's selection
+
+**User Interface of Application**
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/1b36b8a8-52c6-49e5-9f7e-16466a6803fc">
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/94f6da56-4172-4185-b817-f7f37e0225b5">
+
+**Streamlit Interface:**
+- The application uses Streamlit to create a user-friendly interface.
+- Users can select a song from a dropdown menu and click the 'Recommend' button to get
+recommendations.
+- The recommended songs are displayed below the button.
+Functionality
+- User Input: The user selects a song they like from the dropdown menu.
+- Recommendation: When the user clicks the 'Recommend' button, the application finds and
+displays similar songs based on the selected song
+
+**Visualization**
+- First Image: Shows the app interface with a song selected and the 'Recommend' button.
+- Second Image: Shows the app interface where model has recommended songs related to
+the Genre of selected song.
+
+**Running the App**
+To run this Streamlit app, use the command:
+
+<img width="250" alt="image" src="https://github.com/user-attachments/assets/101ee177-fef4-4902-a0a2-2c3641a37c54">
+
+This will start a local server, and we can interact with the application in the web browser.
+
+**Code Review/Versioning and Modular Structure**
+
+A project repository(private) was created in Github to ensure version control.
+- Each section of the code is split properly with proper headings.
+- The code is documented with comments wherever necessary.
+- The code was versioned automatically as the coding was done in Google Colaboratory.
+- To allow members to contribute code, monitor changes, and take part in conversations, all
+team members were added as collaborators.
+- The code works in the exact flow that was needed, proper EDA to the model building.
+- The evaluation of the model is yet to be done.
+- The code was committed to the GitHub repository to ensure proper versioning.
+- Analysis of the code was done by multiple members to ensure that the code follows the
+proper conventions and has an understandable structure.
+- The model must be improved to accommodate live data.
+- The code is well structured and easy to understand.
+- Code was reviewed periodically to ensure the quality.
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/98afd8fd-b53b-4551-a94d-c341a7a37d60">
+
 
 ## References
 
-Resources here helped us understand basic syntax for some code and also how these techniques worked, we used the titanic project as a reference to know about various steps in EDA and about various libraries out there.
+Resources here helped us understand basic syntax for some code and also how these techniques
+worked, we used the titanic project as a reference to know about various steps in EDA and about
+various libraries out there.
 
-Pandas documentation : https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html
+Pandas documentation :
 
-Heat map: https://medium.com/@szabo.bibor/how-to-create-a-seaborn-correlation-heatmap-in-python-834c0686b88e
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html
 
-Histogram: https://www.geeksforgeeks.org/plotting-histogram-in-python-using-matplotlib/
+Heat map:
 
-Box plot: https://www.w3resource.com/machine-learning/scikit-learn/iris/python-machine-learning-scikit-learn-iris-visualization-exercise-18.php
+https://medium.com/@szabo.bibor/how-to-create-a-seaborn-correlation-heatmap-in-python-834c0686b88e
 
-One-hot encoding: https://www.geeksforgeeks.org/ml-one-hot-encoding/
+Histogram: 
 
-Normalization: https://medium.com/@onersarpnalcin/standardscaler-vs-minmaxscaler-vs-robustscaler-which-one-to-use-for-your-next-ml-project-ae5b44f571b9
+https://www.geeksforgeeks.org/plotting-histogram-in-python-using-matplotlib/
 
-Different encoding techniques: https://medium.com/aiskunks/categorical-data-encoding-techniques-d6296697a40f#:~:text=It%20refers%20to%20the%20process,with%20text%20or%20categorical%20variables.
+Box plot:
 
-Train Test split: https://builtin.com/data-science/train-test-split
+https://www.w3resource.com/machine-learning/scikit-learn/iris/python-machine-learning-scikit-learn-iris-visualization-exercise-18.php
 
-OLS Regression Results: https://www.geeksforgeeks.org/interpreting-the-results-of-linear-regression-using-ols-summary/
+One-hot encoding: 
 
-How KNN works: https://www.youtube.com/watch?v=mHl5P-qlnCQ&list=PLBv09BD7ez_6cgkSUAqBXENXEhCkb_2wl
+https://www.geeksforgeeks.org/ml-one-hot-encoding/
 
-Titanic Data set for reference of Basic EDA https://www.kaggle.com/c/titanic/data
+Normalization:
 
+https://medium.com/@onersarpnalcin/standardscaler-vs-minmaxscaler-vs-robustscaler-which-one-to-use-for-your-next-ml-project-ae5b44f571b9
 
+Different encoding techniques:
+
+https://medium.com/aiskunks/categorical-data-encoding-techniques-d6296697a40f#:~:text=It%20refers%20to%20the%20process,with%20text%20or%20categorical%20variables.
+
+Titanic Data set for reference of Basic EDA: 
+
+https://www.kaggle.com/c/titanic/data
 
 
 
