@@ -1,11 +1,9 @@
-# Music_recommendation_system
+# Music Recommendation System
 **Project Overview:**
 
-A music recommendation project that uses clustering to categorize music genres based on audio characteristics. 
-We're using a Kaggle dataset that includes popular Spotify songs as well as audio feature information for each one.
+A music recommendation project that uses clustering to categorize music genres based on audio characteristics. We're using a Kaggle dataset that includes popular Spotify songs as well as audio feature information for each one.
 
-**Goals:** To identify similarities between these audio features and categorize music genres based on those similarities. 
-This way, we can recommend music that users are likely to like!"
+**Goals:** To identify similarities between these audio features and categorize music genres based on those similarities. This way, we can recommend music that users are likely to listen!
 
 **Data Source:**
 
@@ -289,7 +287,7 @@ Then install streamlit on your device
 
 .
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/75c33df4-decb-4ec2-ab0d-67d9f029e79a">
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/3ba6fcf4-b537-4a55-b601-2a5c5073e168">
 
 Libraries Imported:
 - streamlit as st: Streamlit for creating the web app.
@@ -313,9 +311,14 @@ user's selection
 
 **User Interface of Application**
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/1b36b8a8-52c6-49e5-9f7e-16466a6803fc">
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/cca7a6e2-f675-4f49-98c5-d00fd1e3a2f9">
+Shows the app interface with a song selected and the 'Recommend' button
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/94f6da56-4172-4185-b817-f7f37e0225b5">
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/acc232ae-ef7f-40b5-88bc-91389d90ccab">
+Shows the app interface where model has recommended songs related to the Genre of selected song
+
+
 
 **Streamlit Interface:**
 - The application uses Streamlit to create a user-friendly interface.
