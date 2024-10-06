@@ -289,7 +289,7 @@ Then install streamlit on your device
 
 .
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/2c0ac4d5-4c76-4846-8e1e-1d52f2c2d84c">
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/75c33df4-decb-4ec2-ab0d-67d9f029e79a">
 
 Libraries Imported:
 - streamlit as st: Streamlit for creating the web app.
