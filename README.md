@@ -312,10 +312,12 @@ user's selection
 **User Interface of Application**
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/cca7a6e2-f675-4f49-98c5-d00fd1e3a2f9">
+
 Shows the app interface with a song selected and the 'Recommend' button
 
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/acc232ae-ef7f-40b5-88bc-91389d90ccab">
+
 Shows the app interface where model has recommended songs related to the Genre of selected song
 
 
